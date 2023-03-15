@@ -1,0 +1,33 @@
+---
+import classNames from 'classnames'
+import { twMerge } from 'tailwind-merge'
+
+export interface Props {
+  className?: string
+}
+
+const { className } = Astro.props
+const formattedClassName = className
+  ?.split(' ')
+  .filter(name => !name.startsWith('astro-'))
+  .join(' ')
+
+const baseClass = classNames(
+  'text-7xl',
+  'font-bold',
+  'text-center',
+  'text-black',
+  'font-yusei',
+  'flex',
+  'items-center',
+
+  'border-black',
+  'border-x-8',
+  'm-4',
+  'p-4',
+  'px-8'
+)
+const mergedClass = twMerge(baseClass, formattedClassName)
+---
+
+<h1 class={mergedClass}>BOT 作成</h1>
