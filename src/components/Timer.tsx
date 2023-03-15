@@ -71,7 +71,7 @@ export const Timer: React.FCX = ({ className }) => {
           'flex-col',
           'border-black',
           'border-x-8',
-          'm-4',
+          'ml-4',
           'p-4',
           'px-8',
           'w-auto'
@@ -81,7 +81,7 @@ export const Timer: React.FCX = ({ className }) => {
     >
       <button
         onClick={onClick}
-        className={classNames('font-mono', 'cursor-pointer', 'text-9xl', {
+        className={classNames('font-mono', 'cursor-pointer', 'text-7xl', {
           'text-black': timerState !== 'paused',
           'text-puce': timerState === 'paused',
         })}
