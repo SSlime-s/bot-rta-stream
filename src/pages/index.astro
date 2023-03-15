@@ -7,7 +7,7 @@ import Info from '@/components/Info.astro'
 ---
 
 <Layout title='Welcome to Astro.'>
-  <div class='wrap grid bg-mint_green w-full h-full p-8 gap-y-4'>
+  <div class='wrap grid w-full h-full p-8 gap-y-4 m-auto'>
     <div class='grid-in-[side]'>side space</div>
     <StreamingSpace className='grid-in-[main]' />
     <Title className='grid-in-[title]' />
@@ -23,7 +23,7 @@ import Info from '@/components/Info.astro'
       'side title info timer';
     grid-template-rows: 1fr max-content;
     grid-template-columns: 300px 1fr max-content max-content;
-    background-image: linear-gradient(#c9eddc 0%, #628b48 150%);
+    max-width: calc(2rem + 300px + 1rem + 1280px + 2rem);
   }
   main {
     margin: auto;
