@@ -8,8 +8,8 @@ import User from '@/components/User.astro'
 ---
 
 <Layout title='Welcome to Astro.'>
-  <div class='wrap grid w-full h-full p-8 gap-x-8 gap-y-4 m-auto'>
-    <div class='grid-in-[side]'>
+  <div class='wrap grid w-full h-full p-8 gap-y-4 m-auto'>
+    <div class='grid-in-[side] mr-8'>
       <User type='primary' name='SSlime' />
     </div>
     <StreamingSpace className='grid-in-[main]' />
@@ -25,8 +25,8 @@ import User from '@/components/User.astro'
       'side main main main'
       'side title info timer';
     grid-template-rows: 1fr max-content;
-    grid-template-columns: 240px 1fr max-content max-content;
-    max-width: calc(2rem + 240px + 1rem + 1280px + 2rem);
+    grid-template-columns: 300px 1fr max-content max-content;
+    max-width: calc(2rem + 300px + 1rem + 1280px + 2rem);
   }
   main {
     margin: auto;
