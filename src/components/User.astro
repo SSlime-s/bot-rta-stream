@@ -1,0 +1,59 @@
+---
+import { Icon } from 'astro-icon'
+import classNames from 'classnames'
+
+interface Props {
+  type: 'primary' | 'commenter'
+  name: string
+}
+const { type, name } = Astro.props
+---
+
+<div
+  class={classNames(
+    'wrap',
+    'rounded-lg',
+    'border-black',
+    'border-2',
+    'px-2',
+    'py-1.5'
+  )}
+>
+  <span
+    class={classNames(
+      'icon',
+      'border-black',
+      'border-r-2',
+      'w-full',
+      'h-full',
+      'pr-2',
+      'grid',
+      'place-items-center'
+    )}
+  >
+    {type === 'primary' && <Icon name='ic:baseline-keyboard' />}
+    {type === 'commenter' && <Icon name='mdi:microphone-variant' />}
+  </span>
+  <span
+    class={classNames(
+      'text-center',
+      'font-bold',
+      'font-yusei',
+      'tracking-wider'
+    )}>{name}</span
+  >
+</div>
+
+<style lang='scss'>
+  .wrap {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    place-items: center;
+  }
+
+  .icon {
+    &::after {
+      content: '';
+    }
+  }
+</style>
