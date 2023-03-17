@@ -5,11 +5,13 @@ import { Timer } from '@/components/Timer'
 import Title from '@/components/Title.astro'
 import Info from '@/components/Info.astro'
 import User from '@/components/User.astro'
+import Logo from '@/components/Logo.astro'
 ---
 
 <Layout title='Welcome to Astro.'>
   <div class='wrap grid w-full h-full p-8 gap-y-4 m-auto'>
     <div class='grid-in-[side] mr-8'>
+      <Logo className='text-black w-full h-auto' strokeWidth={8} />
       <User type='primary' name='SSlime' />
     </div>
     <StreamingSpace className='grid-in-[main]' />
