@@ -10,6 +10,21 @@ const gridAreaPlugin = plugin(({ matchUtilities }) => {
   })
 })
 
+const stripePlugin = plugin(({ matchComponents, theme }) => {
+  matchComponents(
+    {
+      stripe: value => ({
+        backgroundSize: 'auto auto',
+        backgroundColor: 'transparent',
+        backgroundImage: `repeating-linear-gradient(-45deg, transparent, transparent 32px, ${value} 32px, ${value} 36px)`,
+      }),
+    },
+    {
+      values: theme('colors'),
+    }
+  )
+})
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -27,6 +42,6 @@ module.exports = {
       },
     },
   },
-  plugins: [gridAreaPlugin],
+  plugins: [gridAreaPlugin, stripePlugin],
   content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
 }
