@@ -6,13 +6,16 @@ import Title from '@/components/Title.astro'
 import Info from '@/components/Info.astro'
 import User from '@/components/User.astro'
 import Logo from '@/components/Logo.astro'
+import classNames from 'classnames'
+import Comments from '@/components/Comments.astro'
 ---
 
 <Layout title='Welcome to Astro.'>
   <div class='wrap grid w-full h-full p-8 gap-y-4 m-auto'>
-    <div class='grid-in-[side] mr-8'>
+    <div class='grid-in-[side] mr-8 flex flex-col gap-8'>
       <Logo className='text-black w-full h-auto' strokeWidth={8} />
       <User type='primary' name='SSlime' />
+      <Comments className={classNames('w-full', 'flex-grow')} />
     </div>
     <StreamingSpace className='grid-in-[main]' />
     <Title className='grid-in-[title]' />

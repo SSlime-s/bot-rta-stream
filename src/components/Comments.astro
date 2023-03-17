@@ -1,0 +1,35 @@
+---
+import classNames from 'classnames'
+import { twMerge } from 'tailwind-merge'
+import { normalizeClass } from '@/utils/normalizeClass'
+
+interface Props {
+  className?: string
+}
+const { className } = Astro.props
+---
+
+<div
+  class={twMerge(
+    classNames(
+      'border-4',
+      'border-puce',
+      'stripe-puce',
+      'grid',
+      'place-items-center'
+    ),
+    normalizeClass(className)
+  )}
+>
+  <p
+    class={classNames(
+      'bg-mint_green',
+      'rounded-t',
+      'font-yusei',
+      'text-2xl',
+      'p-4'
+    )}
+  >
+    コメント
+  </p>
+</div>
