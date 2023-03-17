@@ -11,12 +11,24 @@ const formattedClassName = className
   ?.split(' ')
   .filter(name => !name.startsWith('astro-'))
   .join(' ')
-
-const baseClass = classNames('wrap', 'grid', 'place-items-center')
-const mergedClass = twMerge(baseClass, formattedClassName)
 ---
 
-<main class={mergedClass}>
+<main
+  class={twMerge(
+    classNames(
+      'grid',
+      'place-items-center',
+      'stripe-puce',
+      'aspect-video',
+      'w-full',
+      'm-auto',
+      'min-h-full',
+      'border-4',
+      'border-puce'
+    ),
+    formattedClassName
+  )}
+>
   <p
     class={classNames(
       'bg-mint_green',
@@ -29,23 +41,3 @@ const mergedClass = twMerge(baseClass, formattedClassName)
     配信画面
   </p>
 </main>
-
-<style>
-  .wrap {
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    margin: auto;
-    max-height: 100%;
-    border: 4px solid #d8829d;
-
-    background-size: auto auto;
-    background-color: transparent;
-    background-image: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 31px,
-      #d8829d 31px,
-      #d8829d 35px
-    );
-  }
-</style>
