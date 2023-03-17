@@ -1,4 +1,5 @@
 ---
+import { normalizeClass } from '@/utils/normalizeClass'
 import classNames from 'classnames'
 import { twMerge } from 'tailwind-merge'
 
@@ -7,25 +8,23 @@ export interface Props {
 }
 
 const { className } = Astro.props
-const formattedClassName = className
-  ?.split(' ')
-  .filter(name => !name.startsWith('astro-'))
-  .join(' ')
-
-const baseClass = classNames(
-  'text-black',
-  'text-3xl',
-  'font-yusei',
-  'flex',
-  'flex-col',
-  'm-auto',
-  'text-left',
-  'gap-2'
-)
-const mergedClass = twMerge(baseClass, formattedClassName)
 ---
 
-<div class={mergedClass}>
+<div
+  class={twMerge(
+    classNames(
+      'text-black',
+      'text-3xl',
+      'font-yusei',
+      'flex',
+      'flex-col',
+      'm-auto',
+      'text-left',
+      'gap-2'
+    ),
+    normalizeClass(className)
+  )}
+>
   <p>Any% - Rust</p>
   <p>PC - 2023</p>
 </div>

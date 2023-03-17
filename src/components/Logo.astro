@@ -1,4 +1,5 @@
 ---
+import { normalizeClass } from '@/utils/normalizeClass'
 import { twMerge } from 'tailwind-merge'
 
 export interface Props {
@@ -7,13 +8,9 @@ export interface Props {
 }
 
 const { className, strokeWidth = 3 } = Astro.props
-const formattedClassName = className
-  ?.split(' ')
-  .filter(name => !name.startsWith('astro-'))
-  .join(' ')
 
 const baseClass = ''
-const mergedClass = twMerge(baseClass, formattedClassName)
+const mergedClass = twMerge(baseClass, normalizeClass(className))
 ---
 
 <svg
