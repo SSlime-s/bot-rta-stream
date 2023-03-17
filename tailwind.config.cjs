@@ -1,6 +1,6 @@
 const plugin = require('tailwindcss/plugin')
 
-const gridAreaPlugin = plugin(function ({ matchUtilities }) {
+const gridAreaPlugin = plugin(({ matchUtilities }) => {
   matchUtilities({
     'grid-in': value => {
       return {
